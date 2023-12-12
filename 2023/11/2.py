@@ -12,8 +12,4 @@ def distance(a, b):
     xdiff = (x2 - x1) + sum(ecols[x1:x2]) * 999999
     return xdiff + ydiff
 
-dist = 0
-for i in range(len(galaxies)):
-    for j in range(i + 1, len(galaxies)):
-        dist += distance(galaxies[i], galaxies[j])
-print(dist)
+print(sum([distance(galaxies[i], galaxies[j]) for i in range(len(galaxies)) for j in range(i + 1, len(galaxies))]))
