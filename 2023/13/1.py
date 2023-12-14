@@ -2,11 +2,8 @@ def mirror(puzzle):
     for i in range(1, len(puzzle)):
         r1 = puzzle[:i][::-1]
         r2 = puzzle[i:]
-        
-        r1 = r1[:len(r2)]
-        r2 = r2[:len(r1)]
-        
-        if r1 == r2:
+        size = min(len(r1), len(r2))
+        if r1[:size] == r2[:size]:
             return i
     return 0
 
